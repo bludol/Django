@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of People</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>List of People</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+        </ul>
+    </nav>
+    <main>
+        <ul>
+            {% for osoba in osoby %}
+                <li>{{ osoba.jmeno }} {{ osoba.prijmeni }} - {{ osoba.kapela_jmeno }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>© 2024 RFP Project</p>
+    </footer>
+</body>
+</html>

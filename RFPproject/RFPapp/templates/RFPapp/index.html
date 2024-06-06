@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFP Project</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Vlastní CSS styly -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="bg-primary text-light py-5">
+        <div class="container">
+            <h1 class="display-4">Rock For People</h1>
+            <p class="lead">Nejlepší hudební festival s rockovou hudbou.</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'kapely_list' %}"><strong>Kapely</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'osoby_list' %}"><strong>Osoby</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pisnicky_list' %}"><strong>Písničky</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pridej_pisnicku' %}"><strong>Přidat písničku</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mt-5">
+        <h2 class="mb-4 text-center">Vítejte na festivalu Rock For People</h2>
+        <p class="lead text-center">Festival Rock For People je každoroční hudební událost, která přináší nejlepší rockovou hudbu a nezapomenutelnou atmosféru.</p>
+        <img src="{% static 'img/rfp.jpg' %}" class="img-fluid mx-auto d-block" alt="Rock For People">
+        <p class="text-center mt-4">Pro více informací navštivte oficiální <a href="https://www.rockforpeople.cz/" target="_blank">stránky festivalu Rock For People</a>.</p>
+    </main>
+
+    <footer class="bg-primary text-light py-4 text-center">
+        <div class="container">
+            <p>© 2024 Rock For People</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript a další závislosti -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
