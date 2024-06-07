@@ -27,7 +27,7 @@ def pridej_pisnicku(request):
         form = PisnickaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('pisnicky_list')  # Přesměrování na výpis písní po úspěšném přidání
+            return redirect('pisnicky_list')
     else:
         form = PisnickaForm()
     return render(request, 'RFPapp/pridej_pisnicku.html', {'form': form})

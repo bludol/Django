@@ -24,6 +24,5 @@ urlpatterns = [
     path('', include('RFPapp.urls')),
 ]
 
-# Add the path for serving static files during development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
