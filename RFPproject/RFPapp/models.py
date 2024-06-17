@@ -4,9 +4,10 @@ class Kapela(models.Model):
     id = models.IntegerField(primary_key=True)
     jmeno = models.CharField(max_length=45, unique=True)
     zanr = models.CharField(max_length=45)
+    obrazek = models.ImageField(upload_to='img/kapely', blank=True, null=True)
 
     def __str__(self):
-        return self.jmeno
+        return f"{self.jmeno} - {self.zanr}"
 
 class Osoba(models.Model):
     id = models.AutoField(primary_key=True)

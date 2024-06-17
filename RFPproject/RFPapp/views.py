@@ -10,10 +10,6 @@ def kapely_list(request):
     kapely = Kapela.objects.all()
     return render(request, 'RFPapp/kapely_list.html', {'kapely': kapely})
 
-def kapela_detail(request, id):
-    kapela = get_object_or_404(Kapela, pk=id)
-    return render(request, 'RFPapp/kapela_detail.html', {'kapela': kapela})
-
 def osoby_list(request):
     osoby = Osoba.objects.all()
     return render(request, 'RFPapp/osoby_list.html', {'osoby': osoby})
