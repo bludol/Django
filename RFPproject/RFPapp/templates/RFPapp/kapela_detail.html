@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ kapela.jmeno }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="bg-primary text-light py-5">
+        <div class="container">
+            <h1 class="display-4">{{ kapela.jmeno }}</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'kapely_list' %}">Zpět na seznam kapel</a></li>
+        </ul>
+    </nav>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/kapely/' %}{{ kapela.jmeno }}.jpg" class="card-img-top" alt="{{ kapela.jmeno }}" style="max-width: 50%; float: right;">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ kapela.jmeno }}</h1>
+                        <p class="card-text">{{ kapela.popis }}</p>
+                        <h3>Žánr: {{ kapela.zanr }}</h3>
+                        <h3>Členové:</h3>
+                        <ul style="font-size: 20px;">
+                            {% for osoba in kapela.osoba_set.all %}
+                            <li>{{ osoba.jmeno }} {{ osoba.prijmeni }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h3>Písničky:</h3>
+                        <ul style="font-size: 20px;">
+                            {% for pisnicka in kapela.pisnicka_set.all %}
+                            <li>{{ pisnicka.jmeno_pisne }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-primary text-light py-4 text-center">
+        <div class="container">
+            <p>David Balcar | IT3</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

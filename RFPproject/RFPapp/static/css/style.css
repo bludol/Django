@@ -1,29 +1,25 @@
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-/* Základní styl pro celou stránku */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f7f7f7;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hlavička */
 header {
     background-color: #007bff;
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Navigační menu */
 nav ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 nav ul li {
@@ -41,15 +37,56 @@ nav ul li a:hover {
     color: #0056b3;
 }
 
-/* Obsah */
 main {
     padding: 20px;
 }
 
-/* Patička */
 footer {
     background-color: #007bff;
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+}
+
+p {
+    color: #666666;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    float: right;
+    margin-left: 20px;
+}
+
+ul {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 200px;
+    float: right;
+}
+
+.card-body {
+    font-size: 18px;
+    clear: both;
 }

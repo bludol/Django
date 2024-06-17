@@ -18,12 +18,17 @@ def pisnicky_list(request):
     pisnicky = Pisnicka.objects.all()
     return render(request, 'RFPapp/pisnicky_list.html', {'pisnicky': pisnicky})
 
-def pridej_pisnicku(request):
-    if request.method == 'POST':
-        form = PisnickaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('pisnicky_list')
-    else:
-        form = PisnickaForm()
-    return render(request, 'RFPapp/pridej_pisnicku.html', {'form': form})
+def kapela_detail(request, kapela_id):
+    kapela = get_object_or_404(Kapela, pk=kapela_id)
+    return render(request, 'RFPapp/kapela_detail.html', {'kapela': kapela})
+
+# def pridej_pisnicku(request):
+#     if request.method == 'POST':
+#         form = PisnickaForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('pisnicky_list')
+#     else:
+#         form = PisnickaForm()
+#     return render(request, 'RFPapp/pridej_pisnicku.html', {'form': form})
+
