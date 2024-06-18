@@ -47,6 +47,7 @@ footer {
     padding: 20px;
     text-align: center;
     margin-top: 20px;
+    clear: both;
 }
 
 .container {
@@ -68,7 +69,7 @@ p {
 }
 
 img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -82,11 +83,18 @@ ul {
 }
 
 .card-img-top {
-    width: 200px;
+    max-width: 50%;
+    height: auto;
     float: right;
+    margin-left: 20px;
 }
 
 .card-body {
     font-size: 18px;
+}
+
+.content::after {
+    content: "";
+    display: table;
     clear: both;
 }

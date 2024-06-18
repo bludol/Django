@@ -19,29 +19,25 @@
         </ul>
     </nav>
     <main class="container mt-5">
-        <div class="row">
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <img src="{% static 'img/kapely/' %}{{ kapela.jmeno }}.jpg" class="card-img-top" alt="{{ kapela.jmeno }}" style="max-width: 50%; float: right;">
-                    <div class="card-body">
-                        <h1 class="card-title">{{ kapela.jmeno }}</h1>
-                        <h3>Žánr: {{ kapela.zanr }}</h3>
-                        <h3>Členové:</h3>
-                        <ul style="font-size: 15px;">
-                            {% for osoba in kapela.osoba_set.all %}
-                            <li>{{ osoba.jmeno }} {{ osoba.prijmeni }}</li>
-                            {% endfor %}
-                        </ul>
-                        <h3>Písničky:</h3>
-                        <ul style="font-size: 15px;">
-                            {% for pisnicka in kapela.pisnicka_set.all %}
-                            <li>{{ pisnicka.jmeno_pisne }}</li>
-                            {% endfor %}
-                        </ul>
-                        <h3>Popis:</h3>
-                        <p style="font-size: 15px;" class="card-text">{{ kapela.popis }}</p>
-                    </div>
-                </div>
+        <div class="content">
+            <img src="{% static 'img/kapely/' %}{{ kapela.jmeno }}.jpg" class="card-img-top" alt="{{ kapela.jmeno }}" style="max-width: 50%; float: right;">
+            <div class="card-body">
+                <h1 class="card-title">{{ kapela.jmeno }}</h1>
+                <h3>Žánr: {{ kapela.zanr }}</h3>
+                <h3>Členové:</h3>
+                <ul>
+                    {% for osoba in kapela.osoba_set.all %}
+                    <li>{{ osoba.jmeno }} {{ osoba.prijmeni }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Písničky:</h3>
+                <ul>
+                    {% for pisnicka in kapela.pisnicka_set.all %}
+                    <li>{{ pisnicka.jmeno_pisne }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Popis:</h3>
+                <p class="card-text">{{ kapela.popis }}</p>
             </div>
         </div>
     </main>
